@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rotate Left</title>
+	</head>
+	<body>
+		<h1>HackerRank Challenge:</h1>
+		<h2>Rotate Left</h2>
+
+		<script>
+			const rotLeft = (arr, rots) => {
+				const splicedArray = arr.splice(0, rots);
+				return [...arr, ...splicedArray];
+			};
+
+			console.log(rotLeft([1, 2, 3, 4, 5], 4));
+			console.log(
+				rotLeft(
+					[
+						41,
+						73,
+						89,
+						7,
+						10,
+						1,
+						59,
+						58,
+						84,
+						77,
+						77,
+						97,
+						58,
+						1,
+						86,
+						58,
+						26,
+						10,
+						86,
+						51,
+					],
+					10
+				)
+			);
+		</script>
+	</body>
+</html>

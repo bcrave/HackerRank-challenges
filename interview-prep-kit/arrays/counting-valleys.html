@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Counting Valleys</title>
+	</head>
+	<body>
+		<h1>HackerRank Challenge:</h1>
+		<h2>Counting Valleys</h2>
+		<p></p>
+		<script>
+			const countingValleys = (steps, path) => {
+				// Write your code here
+				let elevation = 0,
+					valleyCount = 0;
+
+				for (let i = 0; i < path.length; i++) {
+					elevation = path[i] === "U" ? elevation + 1 : elevation - 1;
+					valleyCount =
+						elevation === 0 && path[i] === "U" ? valleyCount + 1 : valleyCount;
+				}
+				return valleyCount;
+			};
+			console.log(countingValleys(8, "UDDDUDUU")); // Output should be 1
+		</script>
+	</body>
+</html>

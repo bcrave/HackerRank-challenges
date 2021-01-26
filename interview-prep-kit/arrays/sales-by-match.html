@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sales by Match</title>
+	</head>
+	<body>
+		<h1>HackerRank Challenge:</h1>
+		<h2>Sales by Match</h2>
+		<p></p>
+		<script>
+			const sockMerchant = (n, ar) => {
+				// Sort socks by color
+				let pairCount = 0;
+				ar.sort();
+				for (let i = 0; i < ar.length; i++) {
+					if (ar[i] === ar[i + 1]) {
+						pairCount++;
+						ar[(i += 1)];
+					}
+				}
+				return pairCount;
+			};
+
+			console.log(sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20])); // Result should be 3
+			console.log(sockMerchant(10, [1, 1, 3, 1, 2, 1, 3, 3, 3, 3])); // Result should be 4
+		</script>
+	</body>
+</html>

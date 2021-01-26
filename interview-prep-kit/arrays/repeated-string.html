@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Repeated String</title>
+	</head>
+	<body>
+		<h1>HackerRank Challenge:</h1>
+		<h2>Repeated String</h2>
+
+		<script>
+			const repeatedString = (s, n) => {
+				const stringFraction = Math.trunc(n / s.length); // 54760
+				const remainder = n % s.length; //2
+				let count = 0;
+
+				for (let i = 0; i < s.length; i++) {
+					if (s[i] === "a") {
+						count++;
+					}
+				}
+
+				count = count * stringFraction;
+
+				for (let i = 0; i < remainder; i++) {
+					if (s[i] === "a") {
+						count++;
+					}
+				}
+
+				return count;
+			};
+
+			console.log(repeatedString("aba", 10)); // 7
+			console.log(repeatedString("a", 1000000000000)); // 1000000000000
+			console.log(repeatedString("ceebbcb", 817723)); // 0
+			console.log(repeatedString("gfcaaaecbg", 547602)); // 164280
+		</script>
+	</body>
+</html>
