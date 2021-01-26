@@ -10,7 +10,24 @@
 		<h2>2D Arrays</h2>
 
 		<script>
-			const hourglassSum = (arr) => {};
+			const hourglassSum = (arr) => {
+				let sum = 0;
+				let max = -Infinity;
+
+				for (let i = 0; i < 4; i++) {
+					for (let j = 0; j < 4; j++) {
+						sum = arr[i + 1][j + 1];
+						for (let k = 0; k < 3; k++) {
+							sum += arr[i][j + k];
+							sum += arr[i + 2][j + k];
+						}
+						if (sum > max) {
+							max = sum;
+						}
+					}
+				}
+				return max;
+			};
 
 			console.log(
 				hourglassSum([
